@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO MONEY BOOSTER - Smart Investments</title>
+    <style>
+        :root {
+            --gold: #FFD700;
+            --light-gold: #FFF8DC;
+            --red: #D10000;
+            --dark-red: #8B0000;
+            --white: #FFFFFF;
+            --black: #333333;
+            --gray: #F5F5F5;
+            --dark-gray: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gold);
+            color: var(--black);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            margin: 50px auto;
+            max-width: 800px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .auth-form {
+            padding: 40px;
+            width: 100%;
+        }
+        
+        .auth-form h2 {
+            color: var(--red);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-3 {
+            margin-top: 15px;
+        }
+        
+        .link {
+            color: var(--red);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .dashboard {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .welcome {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+        
+        .balance-card {
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .balance-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .balance-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .balance-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .balance-item {
+            text-align: center;
+        }
+        
+        .balance-item-label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .balance-item-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .packages {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--red);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid var(--gold);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .package-name {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+        
+        .package-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+        
+        .package-roi {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .close-modal {
+            float: right;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .admin-panel {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--gray);
+            border-radius: 10px;
+        }
+
+        /* NEW STYLES FOR ADDED FEATURES */
+        .tutorial {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+        
+        .tutorial-step {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--gold);
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .referral {
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .referral-code {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 20px auto;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        
+        .support {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+        
+        .support-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gold);
+        }
+        
+        .support-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Language Selector Styles */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            background: white;
+            color: var(--red);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-btn img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: none;
+            width: 200px;
+        }
+        
+        .language-dropdown.show {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-option:hover {
+            background-color: var(--light-gold);
+        }
+        
+        .language-option img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        /* Payment Verification Styles */
+        .payment-verification {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .verification-input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .auth-container {
+                flex-direction: column;
+            }
+            
+            .balance-details {
+                flex-direction: column;
+            }
+            
+            .balance-item {
+                margin-bottom: 10px;
+            }
+            
+            .language-selector {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .language-dropdown {
+                left: 0;
+                right: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-btn" id="language-btn">
+            <img src="https://flagcdn.com/w20/us.png" alt="English">
+            English
+        </button>
+        <div class="language-dropdown" id="language-dropdown">
+            <div class="language-option" data-lang="en">
+                <img src="https://flagcdn.com/w20/us.png" alt="English"> English
+            </div>
+            <div class="language-option" data-lang="es">
+                <img src="https://flagcdn.com/w20/es.png" alt="Spanish"> Español
+            </div>
+            <div class="language-option" data-lang="fr">
+                <img src="https://flagcdn.com/w20/fr.png" alt="French"> Français
+            </div>
+            <div class="language-option" data-lang="de">
+                <img src="https://flagcdn.com/w20/de.png" alt="German"> Deutsch
+            </div>
+            <div class="language-option" data-lang="zh">
+                <img src="https://flagcdn.com/w20/cn.png" alt="Chinese"> 中文
+            </div>
+            <div class="language-option" data-lang="ar">
+                <img src="https://flagcdn.com/w20/sa.png" alt="Arabic"> العربية
+            </div>
+            <div class="language-option" data-lang="ru">
+                <img src="https://flagcdn.com/w20/ru.png" alt="Russian"> Русский
+            </div>
+            <div class="language-option" data-lang="ja">
+                <img src="https://flagcdn.com/w20/jp.png" alt="Japanese"> 日本語
+            </div>
+            <div class="language-option" data-lang="pt">
+                <img src="https://flagcdn.com/w20/pt.png" alt="Portuguese"> Português
+            </div>
+            <div class="language-option" data-lang="hi">
+                <img src="https://flagcdn.com/w20/in.png" alt="Hindi"> हिन्दी
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">PRO MONEY BOOSTER</div>
+            <div class="tagline">Smart Investments, Guaranteed Returns</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form" class="auth-container">
+            <div class="auth-form">
+                <h2>Login to Your Account</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Login</button>
+                </form>
+                <div class="text-center mt-3">
+                    <span class="link" id="show-forgot">Forgot Password?</span> | 
+                    <span class="link" id="show-register">Create Account</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register-form" class="auth-container hidden">
+            <div class="auth-form">
+                <h2>Create New Account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input type="tel" id="reg-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-block">Register</button>
+                </form>
+                <div class="text-center mt-3">
+                    Already have an account? <span class="link" id="show-login">Login</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard (Visible after login) -->
+        <div id="dashboard" class="hidden">
+            <div class="dashboard">
+                <h1 class="welcome">Welcome, <span id="user-name">User</span>!</h1>
+                
+                <div class="balance-card">
+                    <div class="balance-title">Your Balance</div>
+                    <div class="balance-amount">$<span id="total-balance">0.00</span></div>
+                    <div class="balance-details">
+                        <div class="balance-item">
+                            <div class="balance-item-label">Invested</div>
+                            <div class="balance-item-value">$<span id="invested-amount">0.00</span></div>
+                        </div>
+                        <div class="balance-item">
+                            <div class="balance-item-label">Profit</div>
+                            <div class="balance-item-value">$<span id="profit-amount">0.00</span></div>
+                        </div>
+                        <div class="balance-item">
+                            <div class="balance-item-label">Referral</div>
+                            <div class="balance-item-value">$<span id="referral-amount">0.00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="packages">
+                    <h2 class="section-title">Investment Packages</h2>
+                    <div class="package-grid">
+                        <div class="package-card">
+                            <h3 class="package-name">Starter</h3>
+                            <div class="package-amount">$300</div>
+                            <div class="package-roi">Weekly ROI: $50</div>
+                            <button class="btn invest-btn" data-amount="300" data-roi="50">Invest Now</button>
+                        </div>
+                        <div class="package-card">
+                            <h3 class="package-name">Basic</h3>
+                            <div class="package-amount">$600</div>
+                            <div class="package-roi">Weekly ROI: $120</div>
+                            <button class="btn invest-btn" data-amount="600" data-roi="120">Invest Now</button>
+                        </div>
+                        <div class="package-card">
+                            <h3 class="package-name">Premium</h3>
+                            <div class="package-amount">$1200</div>
+                            <div class="package-roi">Weekly ROI: $300</div>
+                            <button class="btn invest-btn" data-amount="1200" data-roi="300">Invest Now</button>
+                        </div>
+                        <div class="package-card">
+                            <h3 class="package-name">VIP</h3>
+                            <div class="package-amount">$2000</div>
+                            <div class="package-roi">Weekly ROI: $500</div>
+                            <button class="btn invest-btn" data-amount="2000" data-roi="500">Invest Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutorial Section -->
+                <div class="tutorial">
+                    <h2 class="section-title">How to Invest with Pro Money Booster</h2>
+                    <div class="tutorial-step">
+                        <span class="step-number">1</span>
+                        <span>Select any investment package ($300 minimum)</span>
+                    </div>
+                    <div class="tutorial-step">
+                        <span class="step-number">2</span>
+                        <span>Complete payment via bank transfer, card, or cryptocurrency</span>
+                    </div>
+                    <div class="tutorial-step">
+                        <span class="step-number">3</span>
+                        <span>Receive automatic weekly ROI based on your package</span>
+                    </div>
+                    <div class="tutorial-step">
+                        <span class="step-number">4</span>
+                        <span>Withdraw profits when your balance reaches $2000+</span>
+                    </div>
+                </div>
+
+                <!-- Referral Program -->
+                <div class="referral">
+                    <h2 class="section-title">Earn 5% Referral Commission</h2>
+                    <p>Share your link and earn when others invest:</p>
+                    <div class="referral-code">REF-<span id="user-ref-code">PMB123</span></div>
+                    <input type="text" id="ref-link" value="https://promoneybooster.com/ref/demo" readonly style="width:100%; padding:10px; text-align:center; border:none; background:rgba(255,255,255,0.3); color:white; border-radius:5px;">
+                    <button class="btn mt-3" id="copy-ref" style="background:white; color:var(--red);">Copy Referral Link</button>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="support">
+                    <h2 class="section-title">24/7 Customer Support</h2>
+                    <div class="support-item">
+                        <div class="support-icon">W</div>
+                        <div>
+                            <strong>WhatsApp:</strong> +63 975 535 4133<br>
+                            <small>Instant messaging support</small>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">@</div>
+                        <div>
+                            <strong>Email:</strong> Wellsfargo792@gmail.com<br>
+                            <small>Response within 2 hours</small>
+                        </div>
+                    </div>
+                    <div class="support-item">
+                        <div class="support-icon">T</div>
+                        <div>
+                            <strong>Telegram:</strong> <a href="https://t.me/Wellsfargo792gmailcom" style="color: var(--red);">@Wellsfargo792gmailcom</a><br>
+                            <small>For secure communications</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Modal -->
+                <div id="payment-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2>Complete Investment</h2>
+                        <input type="hidden" id="payment-amount">
+                        
+                        <div class="form-group">
+                            <label>Select Payment Method</label>
+                            <select id="payment-method" class="form-group input">
+                                <option value="bank">Bank Transfer</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="crypto">Cryptocurrency</option>
+                            </select>
+                        </div>
+                        
+                        <div id="payment-details">
+                            <div id="bank-details" class="payment-method-details">
+                                <div class="form-group">
+                                    <label>Bank Name:</label>
+                                    <input type="text" value="Global Trust Bank" readonly class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Account Number:</label>
+                                    <input type="text" value="1234567890" readonly class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Account Name:</label>
+                                    <input type="text" value="PRO MONEY BOOSTER" readonly class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>SWIFT/BIC:</label>
+                                    <input type="text" value="GTBKENYA" readonly class="form-group input">
+                                </div>
+                            </div>
+                            
+                            <div id="card-details" class="payment-method-details hidden">
+                                <div class="form-group">
+                                    <label>Card Number</label>
+                                    <input type="text" placeholder="1234 5678 9012 3456" class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" placeholder="MM/YY" class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123" class="form-group input">
+                                </div>
+                            </div>
+                            
+                            <div id="crypto-details" class="payment-method-details hidden">
+                                <div class="form-group">
+                                    <label>Select Cryptocurrency:</label>
+                                    <select id="crypto-type" class="form-group input">
+                                        <option value="smartchain">Binance Smart Chain (BSC)</option>
+                                        <option value="ethereum">Ethereum (ETH)</option>
+                                        <option value="linea">Linea</option>
+                                        <option value="optimism">Optimism</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Wallet Address:</label>
+                                    <input type="text" id="crypto-address" value="0xF444F955BE5E3f64bfcfEB46e0d386a24F0BF03a" readonly class="form-group input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Amount in Crypto:</label>
+                                    <input type="text" id="crypto-amount" readonly class="form-group input">
+                                </div>
+                                <div class="payment-verification">
+                                    <p>After payment, upload transaction hash/proof:</p>
+                                    <input type="file" id="payment-proof" class="verification-input">
+                                    <input type="text" id="transaction-hash" placeholder="Transaction Hash" class="verification-input">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-block" id="confirm-payment">Confirm Payment</button>
+                    </div>
+                </div>
+
+                <!-- Admin Panel -->
+                <div class="admin-panel">
+                    <h2>Admin Controls</h2>
+                    <button class="btn" id="simulate-week">Simulate 1 Week ROI</button>
+                    <button class="btn" id="reset-demo">Reset Demo Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================
+        // APPLICATION STATE
+        // ========================
+        const state = {
+            currentUser: null,
+            users: [
+                {
+                    id: 1,
+                    name: "Demo User",
+                    email: "demo@user.com",
+                    password: "Demo123!",
+                    phone: "+1234567890",
+                    balance: 0,
+                    invested: 0,
+                    profit: 0,
+                    referral: 0,
+                    investments: [],
+                    referredBy: null
+                }
+            ],
+            investments: [],
+            paymentMethods: {
+                bank: {
+                    name: "Global Trust Bank",
+                    account: "1234567890",
+                    name: "PRO MONEY BOOSTER",
+                    swift: "GTBKENYA"
+                },
+                crypto: {
+                    smartchain: "0xF444F955BE5E3f64bfcfEB46e0d386a24F0BF03a",
+                    ethereum: "0xF444F955BE5E3f64bfcfEB46e0d386a24F0BF03a",
+                    linea: "0xF444F955BE5E3f64bfcfEB46e0d386a24F0BF03a",
+                    optimism: "0xF444F955BE5E3f64bfcfEB46e0d386a24F0BF03a"
+                }
+            },
+            translations: {
+                en: {
+                    welcome: "Welcome",
+                    balance: "Your Balance",
+                    invested: "Invested",
+                    profit: "Profit",
+                    referral: "Referral",
+                    packages: "Investment Packages",
+                    howToInvest: "How to Invest with Pro Money Booster",
+                    step1: "Select any investment package ($300 minimum)",
+                    step2: "Complete payment via bank transfer, card, or cryptocurrency",
+                    step3: "Receive automatic weekly ROI based on your package",
+                    step4: "Withdraw profits when your balance reaches $2000+",
+                    referralTitle: "Earn 5% Referral Commission",
+                    referralText: "Share your link and earn when others invest:",
+                    copyLink: "Copy Referral Link",
+                    supportTitle: "24/7 Customer Support",
+                    whatsapp: "WhatsApp",
+                    email: "Email",
+                    telegram: "Telegram",
+                    loginTitle: "Login to Your Account",
+                    registerTitle: "Create New Account",
+                    fullName: "Full Name",
+                    phoneNumber: "Phone Number",
+                    password: "Password",
+                    forgotPassword: "Forgot Password?",
+                    createAccount: "Create Account",
+                    alreadyHaveAccount: "Already have an account?",
+                    login: "Login",
+                    completeInvestment: "Complete Investment",
+                    selectPayment: "Select Payment Method",
+                    bankTransfer: "Bank Transfer",
+                    card: "Credit/Debit Card",
+                    crypto: "Cryptocurrency",
+                    bankName: "Bank Name",
+                    accountNumber: "Account Number",
+                    accountName: "Account Name",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Card Number",
+                    expiryDate: "Expiry Date",
+                    cvv: "CVV",
+                    selectCrypto: "Select Cryptocurrency",
+                    walletAddress: "Wallet Address",
+                    amountInCrypto: "Amount in Crypto",
+                    afterPayment: "After payment, upload transaction hash/proof:",
+                    transactionHash: "Transaction Hash",
+                    confirmPayment: "Confirm Payment",
+                    adminControls: "Admin Controls",
+                    simulateWeek: "Simulate 1 Week ROI",
+                    resetDemo: "Reset Demo Data"
+                },
+                es: {
+                    welcome: "Bienvenido",
+                    balance: "Tu Saldo",
+                    invested: "Invertido",
+                    profit: "Beneficio",
+                    referral: "Referido",
+                    packages: "Paquetes de Inversión",
+                    howToInvest: "Cómo invertir con Pro Money Booster",
+                    step1: "Seleccione cualquier paquete de inversión ($300 mínimo)",
+                    step2: "Complete el pago mediante transferencia bancaria, tarjeta o criptomoneda",
+                    step3: "Reciba ROI semanal automático según su paquete",
+                    step4: "Retire las ganancias cuando su saldo alcance $2000+",
+                    referralTitle: "Gane 5% de Comisión por Referencia",
+                    referralText: "Comparta su enlace y gane cuando otros inviertan:",
+                    copyLink: "Copiar Enlace de Referencia",
+                    supportTitle: "Soporte al Cliente 24/7",
+                    whatsapp: "WhatsApp",
+                    email: "Correo Electrónico",
+                    telegram: "Telegram",
+                    loginTitle: "Iniciar Sesión en su Cuenta",
+                    registerTitle: "Crear Nueva Cuenta",
+                    fullName: "Nombre Completo",
+                    phoneNumber: "Número de Teléfono",
+                    password: "Contraseña",
+                    forgotPassword: "¿Olvidó su contraseña?",
+                    createAccount: "Crear Cuenta",
+                    alreadyHaveAccount: "¿Ya tienes una cuenta?",
+                    login: "Iniciar Sesión",
+                    completeInvestment: "Completar Inversión",
+                    selectPayment: "Seleccionar Método de Pago",
+                    bankTransfer: "Transferencia Bancaria",
+                    card: "Tarjeta de Crédito/Débito",
+                    crypto: "Criptomoneda",
+                    bankName: "Nombre del Banco",
+                    accountNumber: "Número de Cuenta",
+                    accountName: "Nombre de la Cuenta",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Número de Tarjeta",
+                    expiryDate: "Fecha de Expiración",
+                    cvv: "CVV",
+                    selectCrypto: "Seleccionar Criptomoneda",
+                    walletAddress: "Dirección de la Billetera",
+                    amountInCrypto: "Cantidad en Cripto",
+                    afterPayment: "Después del pago, suba el hash/comprobante de transacción:",
+                    transactionHash: "Hash de Transacción",
+                    confirmPayment: "Confirmar Pago",
+                    adminControls: "Controles de Administrador",
+                    simulateWeek: "Simular 1 Semana de ROI",
+                    resetDemo: "Restablecer Datos de Demostración"
+                },
+                fr: {
+                    welcome: "Bienvenue",
+                    balance: "Votre Solde",
+                    invested: "Investi",
+                    profit: "Profit",
+                    referral: "Parrainage",
+                    packages: "Forfaits d'Investissement",
+                    howToInvest: "Comment investir avec Pro Money Booster",
+                    step1: "Sélectionnez un forfait d'investissement (minimum $300)",
+                    step2: "Effectuez le paiement par virement bancaire, carte ou cryptomonnaie",
+                    step3: "Recevez un ROI hebdomadaire automatique selon votre forfait",
+                    step4: "Retirez les bénéfices lorsque votre solde atteint $2000+",
+                    referralTitle: "Gagnez 5% de Commission de Parrainage",
+                    referralText: "Partagez votre lien et gagnez lorsque d'autres investissent:",
+                    copyLink: "Copier le Lien de Parrainage",
+                    supportTitle: "Support Client 24/7",
+                    whatsapp: "WhatsApp",
+                    email: "Email",
+                    telegram: "Telegram",
+                    loginTitle: "Connectez-vous à votre Compte",
+                    registerTitle: "Créer un Nouveau Compte",
+                    fullName: "Nom Complet",
+                    phoneNumber: "Numéro de Téléphone",
+                    password: "Mot de Passe",
+                    forgotPassword: "Mot de passe oublié?",
+                    createAccount: "Créer un Compte",
+                    alreadyHaveAccount: "Vous avez déjà un compte?",
+                    login: "Connexion",
+                    completeInvestment: "Compléter l'Investissement",
+                    selectPayment: "Sélectionner le Mode de Paiement",
+                    bankTransfer: "Virement Bancaire",
+                    card: "Carte de Crédit/Débit",
+                    crypto: "Cryptomonnaie",
+                    bankName: "Nom de la Banque",
+                    accountNumber: "Numéro de Compte",
+                    accountName: "Nom du Compte",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Numéro de Carte",
+                    expiryDate: "Date d'Expiration",
+                    cvv: "CVV",
+                    selectCrypto: "Sélectionner une Cryptomonnaie",
+                    walletAddress: "Adresse du Portefeuille",
+                    amountInCrypto: "Montant en Crypto",
+                    afterPayment: "Après paiement, téléchargez le hash/preuve de transaction:",
+                    transactionHash: "Hash de Transaction",
+                    confirmPayment: "Confirmer le Paiement",
+                    adminControls: "Contrôles d'Administration",
+                    simulateWeek: "Simuler 1 Semaine de ROI",
+                    resetDemo: "Réinitialiser les Données de Démo"
+                },
+                de: {
+                    welcome: "Willkommen",
+                    balance: "Ihr Guthaben",
+                    invested: "Investiert",
+                    profit: "Gewinn",
+                    referral: "Empfehlung",
+                    packages: "Investment-Pakete",
+                    howToInvest: "So investieren Sie mit Pro Money Booster",
+                    step1: "Wählen Sie ein Investment-Paket (mindestens $300)",
+                    step2: "Zahlung per Banküberweisung, Karte oder Kryptowährung abschließen",
+                    step3: "Erhalten Sie wöchentlich automatisch ROI basierend auf Ihrem Paket",
+                    step4: "Gewinne abheben, wenn Ihr Guthaben $2000+ erreicht",
+                    referralTitle: "Verdienen Sie 5% Empfehlungsprovision",
+                    referralText: "Teilen Sie Ihren Link und verdienen Sie, wenn andere investieren:",
+                    copyLink: "Empfehlungslink kopieren",
+                    supportTitle: "24/7 Kundensupport",
+                    whatsapp: "WhatsApp",
+                    email: "E-Mail",
+                    telegram: "Telegram",
+                    loginTitle: "Anmelden bei Ihrem Konto",
+                    registerTitle: "Neues Konto erstellen",
+                    fullName: "Vollständiger Name",
+                    phoneNumber: "Telefonnummer",
+                    password: "Passwort",
+                    forgotPassword: "Passwort vergessen?",
+                    createAccount: "Konto erstellen",
+                    alreadyHaveAccount: "Sie haben bereits ein Konto?",
+                    login: "Anmelden",
+                    completeInvestment: "Investition abschließen",
+                    selectPayment: "Zahlungsmethode auswählen",
+                    bankTransfer: "Banküberweisung",
+                    card: "Kredit-/Debitkarte",
+                    crypto: "Kryptowährung",
+                    bankName: "Bankname",
+                    accountNumber: "Kontonummer",
+                    accountName: "Kontoinhaber",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Kartennummer",
+                    expiryDate: "Ablaufdatum",
+                    cvv: "CVV",
+                    selectCrypto: "Kryptowährung auswählen",
+                    walletAddress: "Wallet-Adresse",
+                    amountInCrypto: "Betrag in Krypto",
+                    afterPayment: "Nach der Zahlung Transaktionshash/Nachweis hochladen:",
+                    transactionHash: "Transaktionshash",
+                    confirmPayment: "Zahlung bestätigen",
+                    adminControls: "Admin-Bereich",
+                    simulateWeek: "1 Woche ROI simulieren",
+                    resetDemo: "Demo-Daten zurücksetzen"
+                },
+                zh: {
+                    welcome: "欢迎",
+                    balance: "您的余额",
+                    invested: "已投资",
+                    profit: "利润",
+                    referral: "推荐",
+                    packages: "投资套餐",
+                    howToInvest: "如何使用Pro Money Booster投资",
+                    step1: "选择任何投资套餐（最低$300）",
+                    step2: "通过银行转账、信用卡或加密货币完成支付",
+                    step3: "根据您的套餐自动获得每周投资回报",
+                    step4: "当您的余额达到$2000+时提取利润",
+                    referralTitle: "赚取5%推荐佣金",
+                    referralText: "分享您的链接并在他人投资时赚取佣金：",
+                    copyLink: "复制推荐链接",
+                    supportTitle: "24/7客户支持",
+                    whatsapp: "WhatsApp",
+                    email: "电子邮件",
+                    telegram: "Telegram",
+                    loginTitle: "登录您的账户",
+                    registerTitle: "创建新账户",
+                    fullName: "全名",
+                    phoneNumber: "电话号码",
+                    password: "密码",
+                    forgotPassword: "忘记密码？",
+                    createAccount: "创建账户",
+                    alreadyHaveAccount: "已有账户？",
+                    login: "登录",
+                    completeInvestment: "完成投资",
+                    selectPayment: "选择支付方式",
+                    bankTransfer: "银行转账",
+                    card: "信用卡/借记卡",
+                    crypto: "加密货币",
+                    bankName: "银行名称",
+                    accountNumber: "账号",
+                    accountName: "账户名称",
+                    swift: "SWIFT/BIC代码",
+                    cardNumber: "卡号",
+                    expiryDate: "有效期",
+                    cvv: "CVV安全码",
+                    selectCrypto: "选择加密货币",
+                    walletAddress: "钱包地址",
+                    amountInCrypto: "加密货币金额",
+                    afterPayment: "支付后上传交易哈希/凭证：",
+                    transactionHash: "交易哈希",
+                    confirmPayment: "确认支付",
+                    adminControls: "管理员控制",
+                    simulateWeek: "模拟1周投资回报",
+                    resetDemo: "重置演示数据"
+                },
+                ar: {
+                    welcome: "مرحبًا بك",
+                    balance: "رصيدك",
+                    invested: "المستثمر",
+                    profit: "الربح",
+                    referral: "الإحالة",
+                    packages: "باقات الاستثمار",
+                    howToInvest: "كيفية الاستثمار مع Pro Money Booster",
+                    step1: "اختر أي باقة استثمار (300 دولار كحد أدنى)",
+                    step2: "أكمل الدفع عن طريق التحويل البنكي أو البطاقة أو العملة المشفرة",
+                    step3: "احصل على عائد استثمار أسبوعي تلقائي بناءً على باقاتك",
+                    step4: "سحب الأرباح عندما يصل رصيدك إلى 2000 دولار أو أكثر",
+                    referralTitle: "اكسب عمولة إحالة 5٪",
+                    referralText: "شارك رابطك واكسب عندما يستثمر الآخرون:",
+                    copyLink: "نسخ رابط الإحالة",
+                    supportTitle: "دعم العملاء على مدار الساعة",
+                    whatsapp: "واتساب",
+                    email: "البريد الإلكتروني",
+                    telegram: "تيليجرام",
+                    loginTitle: "تسجيل الدخول إلى حسابك",
+                    registerTitle: "إنشاء حساب جديد",
+                    fullName: "الاسم الكامل",
+                    phoneNumber: "رقم الهاتف",
+                    password: "كلمة المرور",
+                    forgotPassword: "هل نسيت كلمة السر؟",
+                    createAccount: "إنشاء حساب",
+                    alreadyHaveAccount: "هل لديك حساب بالفعل؟",
+                    login: "تسجيل الدخول",
+                    completeInvestment: "إكمال الاستثمار",
+                    selectPayment: "اختر طريقة الدفع",
+                    bankTransfer: "التحويل البنكي",
+                    card: "بطاقة الائتمان/الخصم",
+                    crypto: "العملة المشفرة",
+                    bankName: "اسم البنك",
+                    accountNumber: "رقم الحساب",
+                    accountName: "اسم الحساب",
+                    swift: "سويفت/BIC",
+                    cardNumber: "رقم البطاقة",
+                    expiryDate: "تاريخ الانتهاء",
+                    cvv: "CVV",
+                    selectCrypto: "اختر العملة المشفرة",
+                    walletAddress: "عنوان المحفظة",
+                    amountInCrypto: "المبلغ بالعملة المشفرة",
+                    afterPayment: "بعد الدفع، قم بتحميل هاش/إثبات المعاملة:",
+                    transactionHash: "هاش المعاملة",
+                    confirmPayment: "تأكيد الدفع",
+                    adminControls: "ضوابط المسؤول",
+                    simulateWeek: "محاكاة عائد أسبوع واحد",
+                    resetDemo: "إعادة تعيين بيانات العرض"
+                },
+                ru: {
+                    welcome: "Добро пожаловать",
+                    balance: "Ваш баланс",
+                    invested: "Инвестировано",
+                    profit: "Прибыль",
+                    referral: "Рефералы",
+                    packages: "Инвестиционные пакеты",
+                    howToInvest: "Как инвестировать с Pro Money Booster",
+                    step1: "Выберите любой инвестиционный пакет (минимум $300)",
+                    step2: "Завершите оплату через банковский перевод, карту или криптовалюту",
+                    step3: "Получайте автоматический еженедельный ROI в зависимости от вашего пакета",
+                    step4: "Выводите прибыль, когда ваш баланс достигнет $2000+",
+                    referralTitle: "Зарабатывайте 5% реферальной комиссии",
+                    referralText: "Поделитесь своей ссылкой и зарабатывайте, когда другие инвестируют:",
+                    copyLink: "Копировать реферальную ссылку",
+                    supportTitle: "Круглосуточная поддержка",
+                    whatsapp: "WhatsApp",
+                    email: "Email",
+                    telegram: "Telegram",
+                    loginTitle: "Вход в аккаунт",
+                    registerTitle: "Создать новый аккаунт",
+                    fullName: "Полное имя",
+                    phoneNumber: "Номер телефона",
+                    password: "Пароль",
+                    forgotPassword: "Забыли пароль?",
+                    createAccount: "Создать аккаунт",
+                    alreadyHaveAccount: "Уже есть аккаунт?",
+                    login: "Войти",
+                    completeInvestment: "Завершить инвестицию",
+                    selectPayment: "Выберите способ оплаты",
+                    bankTransfer: "Банковский перевод",
+                    card: "Кредитная/дебетовая карта",
+                    crypto: "Криптовалюта",
+                    bankName: "Название банка",
+                    accountNumber: "Номер счета",
+                    accountName: "Имя счета",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Номер карты",
+                    expiryDate: "Срок действия",
+                    cvv: "CVV",
+                    selectCrypto: "Выберите криптовалюту",
+                    walletAddress: "Адрес кошелька",
+                    amountInCrypto: "Сумма в криптовалюте",
+                    afterPayment: "После оплаты загрузите хэш/подтверждение транзакции:",
+                    transactionHash: "Хэш транзакции",
+                    confirmPayment: "Подтвердить оплату",
+                    adminControls: "Администрирование",
+                    simulateWeek: "Симулировать 1 неделю ROI",
+                    resetDemo: "Сбросить демо-данные"
+                },
+                ja: {
+                    welcome: "ようこそ",
+                    balance: "残高",
+                    invested: "投資額",
+                    profit: "利益",
+                    referral: "紹介",
+                    packages: "投資パッケージ",
+                    howToInvest: "Pro Money Boosterでの投資方法",
+                    step1: "投資パッケージを選択（最低$300）",
+                    step2: "銀行振込、カード、または暗号通貨で支払いを完了",
+                    step3: "パッケージに基づいた自動週次ROIを受け取る",
+                    step4: "残高が$2000以上になったら利益を引き出す",
+                    referralTitle: "5%の紹介コミッションを獲得",
+                    referralText: "リンクを共有して他の人が投資した際に収益を得る：",
+                    copyLink: "紹介リンクをコピー",
+                    supportTitle: "24/7カスタマーサポート",
+                    whatsapp: "WhatsApp",
+                    email: "メール",
+                    telegram: "Telegram",
+                    loginTitle: "アカウントにログイン",
+                    registerTitle: "新規アカウント作成",
+                    fullName: "フルネーム",
+                    phoneNumber: "電話番号",
+                    password: "パスワード",
+                    forgotPassword: "パスワードをお忘れですか？",
+                    createAccount: "アカウント作成",
+                    alreadyHaveAccount: "既にアカウントをお持ちですか？",
+                    login: "ログイン",
+                    completeInvestment: "投資を完了",
+                    selectPayment: "支払い方法を選択",
+                    bankTransfer: "銀行振込",
+                    card: "クレジット/デビットカード",
+                    crypto: "暗号通貨",
+                    bankName: "銀行名",
+                    accountNumber: "口座番号",
+                    accountName: "口座名義",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "カード番号",
+                    expiryDate: "有効期限",
+                    cvv: "CVV",
+                    selectCrypto: "暗号通貨を選択",
+                    walletAddress: "ウォレットアドレス",
+                    amountInCrypto: "暗号通貨金額",
+                    afterPayment: "支払い後、取引ハッシュ/証明をアップロード：",
+                    transactionHash: "取引ハッシュ",
+                    confirmPayment: "支払いを確認",
+                    adminControls: "管理者コントロール",
+                    simulateWeek: "1週間のROIをシミュレート",
+                    resetDemo: "デモデータをリセット"
+                },
+                pt: {
+                    welcome: "Bem-vindo",
+                    balance: "Seu Saldo",
+                    invested: "Investido",
+                    profit: "Lucro",
+                    referral: "Indicação",
+                    packages: "Pacotes de Investimento",
+                    howToInvest: "Como investir com Pro Money Booster",
+                    step1: "Selecione qualquer pacote de investimento (mínimo $300)",
+                    step2: "Complete o pagamento via transferência bancária, cartão ou criptomoeda",
+                    step3: "Receba ROI semanal automático com base no seu pacote",
+                    step4: "Retire os lucros quando seu saldo atingir $2000+",
+                    referralTitle: "Ganhe 5% de Comissão por Indicação",
+                    referralText: "Compartilhe seu link e ganhe quando outros investirem:",
+                    copyLink: "Copiar Link de Indicação",
+                    supportTitle: "Suporte ao Cliente 24/7",
+                    whatsapp: "WhatsApp",
+                    email: "Email",
+                    telegram: "Telegram",
+                    loginTitle: "Acesse sua Conta",
+                    registerTitle: "Criar Nova Conta",
+                    fullName: "Nome Completo",
+                    phoneNumber: "Número de Telefone",
+                    password: "Senha",
+                    forgotPassword: "Esqueceu a senha?",
+                    createAccount: "Criar Conta",
+                    alreadyHaveAccount: "Já tem uma conta?",
+                    login: "Acessar",
+                    completeInvestment: "Concluir Investimento",
+                    selectPayment: "Selecione o Método de Pagamento",
+                    bankTransfer: "Transferência Bancária",
+                    card: "Cartão de Crédito/Débito",
+                    crypto: "Criptomoeda",
+                    bankName: "Nome do Banco",
+                    accountNumber: "Número da Conta",
+                    accountName: "Nome da Conta",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "Número do Cartão",
+                    expiryDate: "Data de Validade",
+                    cvv: "CVV",
+                    selectCrypto: "Selecione a Criptomoeda",
+                    walletAddress: "Endereço da Carteira",
+                    amountInCrypto: "Quantidade em Cripto",
+                    afterPayment: "Após o pagamento, envie o hash/comprovante da transação:",
+                    transactionHash: "Hash da Transação",
+                    confirmPayment: "Confirmar Pagamento",
+                    adminControls: "Controles de Administrador",
+                    simulateWeek: "Simular 1 Semana de ROI",
+                    resetDemo: "Redefinir Dados de Demonstração"
+                },
+                hi: {
+                    welcome: "स्वागत है",
+                    balance: "आपका बैलेंस",
+                    invested: "निवेश किया",
+                    profit: "लाभ",
+                    referral: "रेफरल",
+                    packages: "निवेश पैकेज",
+                    howToInvest: "Pro Money Booster के साथ निवेश कैसे करें",
+                    step1: "कोई भी निवेश पैकेज चुनें ($300 न्यूनतम)",
+                    step2: "बैंक ट्रांसफर, कार्ड या क्रिप्टोकरेंसी के माध्यम से भुगतान पूरा करें",
+                    step3: "आपके पैकेज के आधार पर स्वचालित साप्ताहिक ROI प्राप्त करें",
+                    step4: "जब आपका बैलेंस $2000+ तक पहुंच जाए तो लाभ निकालें",
+                    referralTitle: "5% रेफरल कमीशन कमाएं",
+                    referralText: "अपना लिंक साझा करें और दूसरों के निवेश करने पर कमाएं:",
+                    copyLink: "रेफरल लिंक कॉपी करें",
+                    supportTitle: "24/7 ग्राहक सहायता",
+                    whatsapp: "WhatsApp",
+                    email: "ईमेल",
+                    telegram: "Telegram",
+                    loginTitle: "अपने खाते में लॉगिन करें",
+                    registerTitle: "नया खाता बनाएं",
+                    fullName: "पूरा नाम",
+                    phoneNumber: "फोन नंबर",
+                    password: "पासवर्ड",
+                    forgotPassword: "पासवर्ड भूल गए?",
+                    createAccount: "खाता बनाएं",
+                    alreadyHaveAccount: "पहले से ही एक खाता है?",
+                    login: "लॉगिन",
+                    completeInvestment: "निवेश पूरा करें",
+                    selectPayment: "भुगतान विधि चुनें",
+                    bankTransfer: "बैंक ट्रांसफर",
+                    card: "क्रेडिट/डेबिट कार्ड",
+                    crypto: "क्रिप्टोकरेंसी",
+                    bankName: "बैंक का नाम",
+                    accountNumber: "खाता संख्या",
+                    accountName: "खाता नाम",
+                    swift: "SWIFT/BIC",
+                    cardNumber: "कार्ड नंबर",
+                    expiryDate: "समाप्ति तिथि",
+                    cvv: "CVV",
+                    selectCrypto: "क्रिप्टोकरेंसी चुनें",
+                    walletAddress: "वॉलेट पता",
+                    amountInCrypto: "क्रिप्टो में राशि",
+                    afterPayment: "भुगतान के बाद, लेन-देन हैश/प्रमाण अपलोड करें:",
+                    transactionHash: "लेन-देन हैश",
+                    confirmPayment: "भुगतान की पुष्टि करें",
+                    adminControls: "व्यवस्थापक नियंत्रण",
+                    simulateWeek: "1 सप्ताह का ROI सिम्युलेट करें",
+                    resetDemo: "डेमो डेटा रीसेट करें"
+                }
+            },
+            currentLanguage: 'en'
+        };
+
+        // ========================
+        // DOM ELEMENTS
+        // ========================
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const dashboard = document.getElementById('dashboard');
+        const paymentModal = document.getElementById('payment-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const languageBtn = document.getElementById('language-btn');
+        const languageDropdown = document.getElementById('language-dropdown');
+
+        // ========================
+        // EVENT LISTENERS
+        // ========================
+        // Language selector
+        languageBtn.addEventListener('click', () => {
+            languageDropdown.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                state.currentLanguage = lang;
+                updateLanguage();
+                languageDropdown.classList.remove('show');
+                
+                // Update button
+                const flag = this.querySelector('img').src;
+                const text = this.textContent.trim();
+                languageBtn.innerHTML = `<img src="${flag}" alt="${lang}"> ${text}`;
+            });
+        });
+
+        // Form toggles
+        document.getElementById('show-register').addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+        });
+        
+        document.getElementById('show-login').addEventListener('click', () => {
+            registerForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        });
+        
+        document.getElementById('show-forgot').addEventListener('click', () => {
+            alert(translate('forgotPassword') + " - " + translate('passwordResetLink'));
+        });
+
+        // Login form
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            const user = state.users.find(u => u.email === email && u.password === password);
+            if (user) {
+                state.currentUser = user;
+                loginForm.classList.add('hidden');
+                dashboard.classList.remove('hidden');
+                updateDashboard();
+                updateLanguage();
+            } else {
+                alert(translate('invalidEmailPassword'));
+            }
+        });
+
+        // Registration form
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const phone = document.getElementById('reg-phone').value;
+            const password = document.getElementById('reg-password').value;
+            
+            // Check if user already exists
+            if (state.users.some(u => u.email === email)) {
+                alert(translate('emailAlreadyExists'));
+                return;
+            }
+            
+            const newUser = {
+                id: state.users.length + 1,
+                name,
+                email,
+                password,
+                phone,
+                balance: 0,
+                invested: 0,
+                profit: 0,
+                referral: 0,
+                investments: [],
+                referredBy: getUrlParameter('ref') || null
+            };
+            
+            state.users.push(newUser);
+            state.currentUser = newUser;
+            
+            registerForm.classList.add('hidden');
+            dashboard.classList.remove('hidden');
+            updateDashboard();
+            updateLanguage();
+            
+            alert(translate('registrationSuccessful'));
+        });
+
+        // Investment buttons
+        document.querySelectorAll('.invest-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = parseFloat(this.getAttribute('data-amount'));
+                document.getElementById('payment-amount').value = amount;
+                
+                // Calculate crypto equivalent (mock rate)
+                const cryptoRate = 50000; // $50,000 per BTC for demo
+                document.getElementById('crypto-amount').value = (amount / cryptoRate).toFixed(8) + " BTC";
+                
+                paymentModal.style.display = 'flex';
+            });
+        });
+
+        // Payment method toggle
+        document.getElementById('payment-method').addEventListener('change', function() {
+            document.querySelectorAll('.payment-method-details').forEach(el => {
+                el.classList.add('hidden');
+            });
+            document.getElementById(`${this.value}-details`).classList.remove('hidden');
+            
+            // Update crypto address when crypto is selected
+            if (this.value === 'crypto') {
+                updateCryptoAddress();
+            }
+        });
+
+        // Crypto type change
+        document.getElementById('crypto-type').addEventListener('change', function() {
+            updateCryptoAddress();
+        });
+
+        // Confirm payment
+        document.getElementById('confirm-payment').addEventListener('click', function() {
+            const amount = parseFloat(document.getElementById('payment-amount').value);
+            const method = document.getElementById('payment-method').value;
+            
+            if (method === 'crypto') {
+                const txHash = document.getElementById('transaction-hash').value;
+                if (!txHash) {
+                    alert(translate('provideTransactionHash'));
+                    return;
+                }
+            }
+            
+            if (state.currentUser) {
+                // Process referral bonus if applicable
+                if (state.currentUser.referredBy) {
+                    const referrer = state.users.find(u => u.id === state.currentUser.referredBy);
+                    if (referrer) {
+                        const bonus = amount * 0.05; // 5% referral
+                        referrer.referral += bonus;
+                        referrer.balance += bonus;
+                    }
+                }
+                
+                // Update user investment
+                state.currentUser.invested += amount;
+                state.currentUser.balance += amount;
+                
+                state.investments.push({
+                    userId: state.currentUser.id,
+                    amount,
+                    date: new Date(),
+                    method,
+                    roi: calculateROI(amount)
+                });
+                
+                paymentModal.style.display = 'none';
+                updateDashboard();
+                alert(translate('investmentSuccess').replace('${amount}', amount).replace('${method}', translate(method)));
+            }
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            paymentModal.style.display = 'none';
+        });
+
+        // Admin controls
+        document.getElementById('simulate-week').addEventListener('click', function() {
+            if (state.currentUser && state.currentUser.invested > 0) {
+                const activeInvestments = state.investments.filter(
+                    inv => inv.userId === state.currentUser.id
+                );
+                
+                activeInvestments.forEach(inv => {
+                    state.currentUser.profit += inv.roi;
+                    state.currentUser.balance += inv.roi;
+                });
+                
+                updateDashboard();
+                alert(translate('weeklyROIAdded').replace('${amount}', activeInvestments.reduce((sum, inv) => sum + inv.roi, 0)));
+            } else {
+                alert(translate('noActiveInvestments'));
+            }
+        });
+
+        document.getElementById('reset-demo').addEventListener('click', function() {
+            if (confirm(translate('confirmReset'))) {
+                state.currentUser = {
+                    ...state.currentUser,
+                    balance: 0,
+                    invested: 0,
+                    profit: 0,
+                    referral: 0,
+                    investments: []
+                };
+                updateDashboard();
+            }
+        });
+
+        // Referral link copy
+        document.getElementById('copy-ref').addEventListener('click', function() {
+            const refLink = document.getElementById('ref-link');
+            refLink.select();
+            document.execCommand('copy');
+            alert(translate('referralLinkCopied'));
+        });
+
+        // ========================
+        // HELPER FUNCTIONS
+        // ========================
+        function calculateROI(amount) {
+            if (amount >= 2000) return 500;
+            if (amount >= 1200) return 300;
+            if (amount >= 600) return 120;
+            if (amount >= 300) return 50;
+            return 0;
+        }
+
+        function updateDashboard() {
+            if (state.currentUser) {
+                document.getElementById('user-name').textContent = state.currentUser.name;
+                document.getElementById('total-balance').textContent = state.currentUser.balance.toFixed(2);
+                document.getElementById('invested-amount').textContent = state.currentUser.invested.toFixed(2);
+                document.getElementById('profit-amount').textContent = state.currentUser.profit.toFixed(2);
+                document.getElementById('referral-amount').textContent = state.currentUser.referral.toFixed(2);
+                document.getElementById('user-ref-code').textContent = `PMB${state.currentUser.id}`;
+                document.getElementById('ref-link').value = `https://promoneybooster.com/ref/${state.currentUser.id}`;
+            }
+        }
+
+        function getUrlParameter(name) {
+            name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function translate(key) {
+            return state.translations[state.currentLanguage][key] || key;
+        }
+
+        function updateLanguage() {
+            // Update all text elements with translations
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                el.textContent = translate(key);
+            });
+            
+            // Update placeholders
+            document.getElementById('login-email').placeholder = translate('email');
+            document.getElementById('login-password').placeholder = translate('password');
+            document.getElementById('reg-name').placeholder = translate('fullName');
+            document.getElementById('reg-email').placeholder = translate('email');
+            document.getElementById('reg-phone').placeholder = translate('phoneNumber');
+            document.getElementById('reg-password').placeholder = translate('password');
+            document.getElementById('transaction-hash').placeholder = translate('transactionHash');
+            
+            // Update button texts
+            document.getElementById('show-forgot').textContent = translate('forgotPassword');
+            document.getElementById('show-register').textContent = translate('createAccount');
+            document.getElementById('show-login').textContent = translate('login');
+            document.getElementById('copy-ref').textContent = translate('copyLink');
+            document.getElementById('confirm-payment').textContent = translate('confirmPayment');
+            document.getElementById('simulate-week').textContent = translate('simulateWeek');
+            document.getElementById('reset-demo').textContent = translate('resetDemo');
+            
+            // Update section titles
+            document.querySelector('.welcome').textContent = translate('welcome') + ", ";
+            document.querySelector('.balance-title').textContent = translate('balance');
+            document.querySelectorAll('.balance-item-label')[0].textContent = translate('invested');
+            document.querySelectorAll('.balance-item-label')[1].textContent = translate('profit');
+            document.querySelectorAll('.balance-item-label')[2].textContent = translate('referral');
+            document.querySelector('.section-title').textContent = translate('packages');
+            document.querySelectorAll('.section-title')[1].textContent = translate('howToInvest');
+            document.querySelectorAll('.section-title')[2].textContent = translate('referralTitle');
+            document.querySelectorAll('.section-title')[3].textContent = translate('supportTitle');
+            
+            // Update tutorial steps
+            const steps = document.querySelectorAll('.tutorial-step span:last-child');
+            steps[0].textContent = translate('step1');
+            steps[1].textContent = translate('step2');
+            steps[2].textContent = translate('step3');
+            steps[3].textContent = translate('step4');
+            
+            // Update referral text
+            document.querySelector('.referral p').textContent = translate('referralText');
+            
+            // Update support items
+            document.querySelectorAll('.support-item strong')[0].textContent = translate('whatsapp') + ":";
+            document.querySelectorAll('.support-item strong')[1].textContent = translate('email') + ":";
+            document.querySelectorAll('.support-item strong')[2].textContent = translate('telegram') + ":";
+            
+            // Update modal content
+            if (document.querySelector('.modal-content h2')) {
+                document.querySelector('.modal-content h2').textContent = translate('completeInvestment');
+                document.querySelector('#payment-method').previousElementSibling.textContent = translate('selectPayment');
+                document.querySelectorAll('#payment-method option')[0].textContent = translate('bankTransfer');
+                document.querySelectorAll('#payment-method option')[1].textContent = translate('card');
+                document.querySelectorAll('#payment-method option')[2].textContent = translate('crypto');
+                
+                // Bank details
+                document.querySelectorAll('#bank-details label')[0].textContent = translate('bankName') + ":";
+                document.querySelectorAll('#bank-details label')[1].textContent = translate('accountNumber') + ":";
+                document.querySelectorAll('#bank-details label')[2].textContent = translate('accountName') + ":";
+                document.querySelectorAll('#bank-details label')[3].textContent = translate('swift') + ":";
+                
+                // Card details
+                document.querySelectorAll('#card-details label')[0].textContent = translate('cardNumber');
+                document.querySelectorAll('#card-details label')[1].textContent = translate('expiryDate');
+                document.querySelectorAll('#card-details label')[2].textContent = translate('cvv');
+                
+                // Crypto details
+                document.querySelector('#crypto-type').previousElementSibling.textContent = translate('selectCrypto') + ":";
+                document.querySelector('#crypto-address').previousElementSibling.textContent = translate('walletAddress') + ":";
+                document.querySelector('#crypto-amount').previousElementSibling.textContent = translate('amountInCrypto') + ":";
+                document.querySelector('.payment-verification p').textContent = translate('afterPayment');
+                document.querySelector('#transaction-hash').placeholder = translate('transactionHash');
+            }
+        }
+
+        function updateCryptoAddress() {
+            const cryptoType = document.getElementById('crypto-type').value;
+            document.getElementById('crypto-address').value = state.paymentMethods.crypto[cryptoType];
+        }
+
+        // Initialize
+        if (getUrlParameter('ref')) {
+            document.getElementById('register-form').classList.remove('hidden');
+            document.getElementById('login-form').classList.add('hidden');
+        }
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                languageDropdown.classList.remove('show');
+            }
+        });
+
+        // Add data-translate attributes to elements
+        document.querySelector('.welcome').setAttribute('data-translate', 'welcome');
+        document.querySelector('.balance-title').setAttribute('data-translate', 'balance');
+        document.querySelectorAll('.balance-item-label')[0].setAttribute('data-translate', 'invested');
+        document.querySelectorAll('.balance-item-label')[1].setAttribute('data-translate', 'profit');
+        document.querySelectorAll('.balance-item-label')[2].setAttribute('data-translate', 'referral');
+        document.querySelector('.section-title').setAttribute('data-translate', 'packages');
+        document.querySelectorAll('.section-title')[1].setAttribute('data-translate', 'howToInvest');
+        document.querySelectorAll('.section-title')[2].setAttribute('data-translate', 'referralTitle');
+        document.querySelectorAll('.section-title')[3].setAttribute('data-translate', 'supportTitle');
+        document.querySelector('.referral p').setAttribute('data-translate', 'referralText');
+        document.getElementById('copy-ref').setAttribute('data-translate', 'copyLink');
+        document.getElementById('show-forgot').setAttribute('data-translate', 'forgotPassword');
+        document.getElementById('show-register').setAttribute('data-translate', 'createAccount');
+        document.getElementById('show-login').setAttribute('data-translate', 'login');
+        document.getElementById('confirm-payment').setAttribute('data-translate', 'confirmPayment');
+        document.getElementById('simulate-week').setAttribute('data-translate', 'simulateWeek');
+        document.getElementById('reset-demo').setAttribute('data-translate', 'resetDemo');
+    </script>
+</body>
+</html>
